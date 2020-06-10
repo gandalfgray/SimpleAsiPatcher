@@ -36,7 +36,7 @@ VOID PatchMain(IHooker* hooker)
 	DWORD check1, check2, equal;
 	if (hooker->ReadDWord(0x004F8194, &check1) && check1 == (WS_VISIBLE | WS_POPUP) && hooker->ReadDWord(0x0060214A, &check2) && check2 == (WS_VISIBLE | WS_POPUP))
 	{
-		// Defence fix for SoD 3.2 (eng)
+		// Defense fix for HoMM SoD 3.2 (eng)
 		hooker->PatchByte(0x0041E3A4, 0x4D); // fdiv -> fmul
 		hooker->PatchByte(0x0041E4E0, 0x4D); // fdiv -> fmul
 		hooker->PatchByte(0x00465944, 0x4D); // fdiv -> fmul
