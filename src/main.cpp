@@ -218,7 +218,7 @@ VOID PatchMain(IHooker* hooker)
 	DWORD count = sizeof(addressArray) / sizeof(AddressSpace);
 	do
 	{
-		DWORD check1, check2, equal;
+		DWORD check1, check2;
 		if (hooker->ReadDWord(hookSpace->check_1 + 1, &check1) && check1 == (WS_VISIBLE | WS_POPUP) &&
 			hooker->ReadDWord(hookSpace->check_2 + 1, &check2) && check2 == (WS_VISIBLE | WS_POPUP))
 		{
