@@ -22,7 +22,8 @@
 	SOFTWARE.
 */
 
-// > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:defense_fix.asi /DEBUG:NONE /EMITPOGOPHASEINFO
+// VS 2008 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:defense_fix.asi /DEBUG:NONE /MANIFEST:NO
+// VS 2019 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:defense_fix.asi /DEBUG:NONE /EMITPOGOPHASEINFO
 
 #define WIN32_LEAN_AND_MEAN
 
