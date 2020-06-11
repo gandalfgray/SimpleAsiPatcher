@@ -36,8 +36,8 @@
 const struct AddressSpace {
 	DWORD pattern_check[2];
 	DWORD armorer_fix[3];
-	DWORD creatures_luck_nop[2];
-} addressArray[] = {
+	DWORD creatures_luck[2];
+} addressSpace[] = {
 // === RUS ======================================================================================================================================
 #pragma region RUS
 	// Heroes III Erathia - v1.0 Buka
@@ -241,16 +241,16 @@ VOID PatchSpace(IHooker* hooker, const AddressSpace* hookSpace)
 		for (DWORD i = 0; i < sizeof(hookSpace->armorer_fix) / sizeof(DWORD); ++i)
 			hooker->PatchByte(hookSpace->armorer_fix[i] + 1, 0x4D); // fdivr -> fmul
 
-	// Neutral creatures luck NOP
-	if (hookSpace->creatures_luck_nop[0])
-		for (DWORD i = 0; i < sizeof(hookSpace->creatures_luck_nop) / sizeof(DWORD); ++i)
-			hooker->PatchNop(hookSpace->creatures_luck_nop[i], 6);
+	// Neutral creatures luck
+	if (hookSpace->creatures_luck[0])
+		for (DWORD i = 0; i < sizeof(hookSpace->creatures_luck) / sizeof(DWORD); ++i)
+			hooker->PatchNop(hookSpace->creatures_luck[i], 6);
 }
 
 VOID PatchMain(IHooker* hooker)
 {
-	const AddressSpace* hookSpace = addressArray;
-	DWORD count = sizeof(addressArray) / sizeof(AddressSpace);
+	const AddressSpace* hookSpace = addressSpace;
+	DWORD count = sizeof(addressSpace) / sizeof(AddressSpace);
 	do
 	{
 		DWORD check;
