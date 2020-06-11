@@ -22,6 +22,7 @@
 	SOFTWARE.
 */
 
+// VS 6.0  > cl main.cpp /nologo /MD /W0 /O1 /GF /link /out:defense_fix.asi /DEBUG:NONE
 // VS 2008 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:defense_fix.asi /DEBUG:NONE /MANIFEST:NO
 // VS 2019 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:defense_fix.asi /DEBUG:NONE /EMITPOGOPHASEINFO
 
