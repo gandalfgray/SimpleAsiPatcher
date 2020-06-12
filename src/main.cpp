@@ -29,7 +29,7 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include "windows.h"
-#include "IHooker.h"
+#include "hooker.h"
 
 #pragma comment(lib, "kernel32.lib")
 
@@ -234,28 +234,28 @@ const struct AddressSpace {
 #pragma endregion
 };
 
-VOID PatchSpace(IHooker* hooker, const AddressSpace* hookSpace)
+VOID PatchSpace(HOOKER hooker, const AddressSpace* hookSpace)
 {
 	// Armorer fix
 	if (hookSpace->armorer_fix[0])
 		for (DWORD i = 0; i < sizeof(hookSpace->armorer_fix) / sizeof(DWORD); ++i)
-			hooker->PatchByte(hookSpace->armorer_fix[i] + 1, 0x4D); // fdivr -> fmul
+			PatchByte(hooker, hookSpace->armorer_fix[i] + 1, 0x4D); // fdivr -> fmul
 
 	// Neutral creatures luck
 	if (hookSpace->creatures_luck[0])
 		for (DWORD i = 0; i < sizeof(hookSpace->creatures_luck) / sizeof(DWORD); ++i)
-			hooker->PatchNop(hookSpace->creatures_luck[i], 6);
+			PatchNop(hooker, hookSpace->creatures_luck[i], 6);
 }
 
-VOID PatchMain(IHooker* hooker)
+extern "C" VOID __stdcall PatchMain(HOOKER hooker)
 {
 	const AddressSpace* hookSpace = addressSpace;
 	DWORD count = sizeof(addressSpace) / sizeof(AddressSpace);
 	do
 	{
 		DWORD check;
-		if ((hooker->ReadDWord(hookSpace->pattern_check[0] + 1, &check) && check == (WS_VISIBLE | WS_POPUP)) &&
-			(hooker->ReadDWord(hookSpace->pattern_check[1] + 1, &check) && check == (WS_VISIBLE | WS_POPUP)))
+		if ((ReadDWord(hooker, hookSpace->pattern_check[0] + 1, &check) && check == (WS_VISIBLE | WS_POPUP)) &&
+			(ReadDWord(hooker, hookSpace->pattern_check[1] + 1, &check) && check == (WS_VISIBLE | WS_POPUP)))
 		{
 			PatchSpace(hooker, hookSpace);
 			break;

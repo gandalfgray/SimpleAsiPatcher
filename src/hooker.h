@@ -33,174 +33,202 @@ enum RedirectType
 	REDIRECT_JUMP_SHORT = 0xEB
 };
 
-class IHooker {
-public:
+typedef VOID* HOOKER;
+
+extern "C"
+{
+	/// <summary>
+	///	Creates hooker object
+	/// </summary>
+	/// <param name="hModule"></param>
+	/// <returns></returns>
+	HOOKER __stdcall CreateHooker(HMODULE hModule);
+
 	/// <summary>
 	/// Deletes Hooker object
 	/// </summary>
-	virtual VOID Release();
+	/// <param name="hooker"></param>
+	VOID __stdcall ReleaseHooker(HOOKER hooker);
 
 	/// <summary>
 	/// Retrives module base address offset
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <returns></returns>
-	virtual DWORD GetBaseOffset();
+	DWORD __stdcall GetBaseOffset(HOOKER hooker);
 
 	/// <summary>
 	/// Retrives module handle
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <returns></returns>
-	virtual HMODULE GetModuleHandle();
+	HMODULE __stdcall GetHookerModule(HOOKER hooker);
 
 	/// <summary>
 	/// Reads data block
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="block"></param>
 	/// <param name="size"></param>
 	/// <returns></returns>
-	virtual BOOL ReadBlock(DWORD address, VOID* block, DWORD size);
+	BOOL __stdcall ReadBlock(HOOKER hooker, DWORD address, VOID* block, DWORD size);
 
 	/// <summary>
 	/// Reads byte value
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="lpValue"></param>
 	/// <returns></returns>
-	virtual BOOL ReadByte(DWORD address, BYTE* lpValue);
+	BOOL __stdcall ReadByte(HOOKER hooker, DWORD address, BYTE* lpValue);
 
 	/// <summary>
 	/// Reads word value
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="lpValue"></param>
 	/// <returns></returns>
-	virtual BOOL ReadWord(DWORD address, WORD* lpValue);
+	BOOL __stdcall ReadWord(HOOKER hooker, DWORD address, WORD* lpValue);
 
 	/// <summary>
 	/// Reads double word value
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="lpValue"></param>
 	/// <returns></returns>
-	virtual BOOL ReadDWord(DWORD address, DWORD* lpValue);
+	BOOL __stdcall ReadDWord(HOOKER hooker, DWORD address, DWORD* lpValue);
 
 	/// <summary>
 	/// Write redirect to new address
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="newAddress"></param>
 	/// <param name="type"></param>
 	/// <param name="nopCount"></param>
 	/// <returns></returns>
-	virtual BOOL PatchRedirect(DWORD address, DWORD newAddress, RedirectType type, DWORD nopCount = 0);
+	BOOL __stdcall PatchRedirect(HOOKER hooker, DWORD address, DWORD newAddress, RedirectType type, DWORD nopCount = 0);
 
 	/// <summary>
 	/// Writes jump to new address
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="jumpAddress"></param>
 	/// <returns></returns>
-	virtual BOOL PatchJump(DWORD address, DWORD jumpAddress);
+	BOOL __stdcall PatchJump(HOOKER hooker, DWORD address, DWORD jumpAddress);
 
 	/// <summary>
 	/// Writes jump to new function
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="hookAddress"></param>
 	/// <param name="nopCount"></param>
 	/// <returns></returns>
-	virtual BOOL PatchHook(DWORD address, VOID* hookAddress, DWORD nopCount = 0);
+	BOOL __stdcall PatchHook(HOOKER hooker, DWORD address, VOID* hookAddress, DWORD nopCount = 0);
 
 	/// <summary>
 	/// Writes call to new function
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="funcAddress"></param>
 	/// <param name="nopCount"></param>
 	/// <returns></returns>
-	virtual BOOL PatchCall(DWORD address, VOID* funcAddress, DWORD nopCount = 0);
+	BOOL __stdcall PatchCall(HOOKER hooker, DWORD address, VOID* funcAddress, DWORD nopCount = 0);
 
 	/// <summary>
 	/// Fill bytes by specified value
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="value"></param>
 	/// <param name="size"></param>
 	/// <returns></returns>
-	virtual BOOL PatchSet(DWORD address, BYTE value, DWORD size);
+	BOOL __stdcall PatchSet(HOOKER hooker, DWORD address, BYTE value, DWORD size);
 
 	/// <summary>
 	/// Fills bytes by no operation (nop) instruction
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="size"></param>
 	/// <returns></returns>
-	virtual BOOL PatchNop(DWORD address, DWORD size);
+	BOOL __stdcall PatchNop(HOOKER hooker, DWORD address, DWORD size);
 
 	/// <summary>
-	/// Writes new data block from string
+	/// Writes new hex string
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="block"></param>
 	/// <returns></returns>
-	virtual BOOL PatchBlock(DWORD address, CHAR* block);
+	BOOL __stdcall PatchHex(HOOKER hooker, DWORD address, CHAR* hex);
 
 	/// <summary>
 	/// Writes new data block
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="block"></param>
 	/// <param name="size"></param>
 	/// <returns></returns>
-	virtual BOOL PatchBlock(DWORD address, VOID* block, DWORD size);
+	BOOL __stdcall PatchBlock(HOOKER hooker, DWORD address, VOID* block, DWORD size);
 
 	/// <summary>
 	/// Writes new byte value
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="value"></param>
 	/// <returns></returns>
-	virtual BOOL PatchByte(DWORD address, BYTE value);
+	BOOL __stdcall PatchByte(HOOKER hooker, DWORD address, BYTE value);
 
 	/// <summary>
 	/// Writes new word value
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="value"></param>
 	/// <returns></returns>
-	virtual BOOL PatchWord(DWORD address, WORD value);
+	BOOL __stdcall PatchWord(HOOKER hooker, DWORD address, WORD value);
 
 	/// <summary>
 	/// Writes new double word value
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="address"></param>
 	/// <param name="value"></param>
 	/// <returns></returns>
-	virtual BOOL PatchDWord(DWORD address, DWORD value);
+	BOOL __stdcall PatchDWord(HOOKER hooker, DWORD address, DWORD value);
 
 	/// <summary>
 	/// Redirects module imported function and retrives old address
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="funcName"></param>
 	/// <param name="funcAddress"></param>
 	/// <returns></returns>
-	virtual DWORD PatchImport(const CHAR* funcName, VOID* funcAddress);
+	DWORD __stdcall PatchImport(HOOKER hooker, const CHAR* funcName, VOID* funcAddress);
 
 	/// <summary>
 	/// Redirects module exported function and retrives old address
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="funcName"></param>
 	/// <param name="funcAddress"></param>
 	/// <returns></returns>
-	virtual DWORD PatchExport(const CHAR* funcName, VOID* funcAddress);
+	DWORD __stdcall PatchExport(HOOKER hooker, const CHAR* funcName, VOID* funcAddress);
 
 	/// <summary>
 	/// Redirects module entry point and retrives old address
 	/// </summary>
+	/// <param name="hooker"></param>
 	/// <param name="funcAddress"></param>
 	/// <returns></returns>
-	virtual DWORD PatchEntry(VOID* funcAddress);
-};
-
-IHooker* CreateHooker(HMODULE hModule);
+	DWORD __stdcall PatchEntry(HOOKER hooker, VOID* funcAddress);
+}
