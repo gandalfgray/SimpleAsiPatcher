@@ -1,3 +1,6 @@
+#pragma once
+
+#pragma pack(1)
 struct H3Army
 {
  INT32 type[7];
@@ -116,3 +119,4 @@ struct H3Hero
  DWORD ai_dmana_eff_48A; // DoubleManaEffectivness +1162
  DWORD ai_mana_eff_48E; // ManaEffectivness +1164
 };
+#pragma pack()

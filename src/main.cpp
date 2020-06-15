@@ -22,9 +22,9 @@
 	SOFTWARE.
 */
 
-// VS 6.0  > cl main.cpp /nologo /MD /W0 /O1 /GF /link /out:defense_fix.asi /DEBUG:NONE /DLL
-// VS 2008 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:defense_fix.asi /DEBUG:NONE /MANIFEST:NO
-// VS 2019 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:defense_fix.asi /DEBUG:NONE /EMITPOGOPHASEINFO
+// VS 6.0  > cl main.cpp /nologo /MD /W0 /O1 /GF /link /out:h3_fix.asi /debug:none /dll /merge:.text=.asi /merge:.rdata=.asi /section:.asi,re
+// VS 2008 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:h3_fix.asi /debug:none /manifest:no /merge:.text=.asi /merge:.rdata=.asi /section:.asi,re
+// VS 2019 > cl main.cpp /nologo /MD /GS- /GL /O1 /Os /GF /link /out:h3_fix.asi /debug:none /emitpogophaseinfo /merge:.text=.rdata /merge:.rdata=.asi /section:.asi,re
 
 #define WIN32_LEAN_AND_MEAN
 
@@ -34,13 +34,14 @@
 
 #pragma comment(lib, "kernel32.lib")
 
+#pragma pack(1)
 const struct AddressSpace {
 	DWORD pattern_check[2];
 	DWORD armorer_fix[3];
 	DWORD creatures_luck[2];
 	struct {
 		DWORD hook;
-		DWORD type;
+		BYTE type;
 	} lighthouse_bonus;
 } addressSpace[] = {
 // === RUS ======================================================================================================================================
@@ -271,6 +272,7 @@ const struct AddressSpace {
 	0x004E2B20, 0
 #pragma endregion
 };
+#pragma pack()
 
 const AddressSpace* hookSpace;
 
