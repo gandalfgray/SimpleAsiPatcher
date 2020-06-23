@@ -59,6 +59,15 @@ const struct AddressSpace {
 		BYTE type;
 	} ai_water_walk_fly;
 	DWORD tavern_rumors;
+	struct {
+		DWORD hook;
+		BYTE type;
+	} refuge_camp;
+	DWORD ghost_hero;
+	struct {
+		DWORD hook;
+		DWORD offset[3];
+	} double_cast;
 } addressSpace[] = {
 // === RUS ======================================================================================================================================
 #pragma region RUS
@@ -68,7 +77,8 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x00000000, 0x00000000, 0x00000000, 1,
-	0x004B0570,
+	0x004B0570, 0x004E08F2, 4, 0x00000000,
+	0x00537746, 0x000050E0, 0x000051C4, 0x00013540,
 
 	// Heroes III Armageddon - v2.1 Buka
 	0x004F2533, 0x005F9649,
@@ -76,7 +86,8 @@ const struct AddressSpace {
 	0x00440545, 0x0043E686,
 	0x004DFE30, 0,
 	0x0042EDC8, 0x0042EDEB, 0x0042F10B, 0,
-	0x004C8550,
+	0x004C8550, 0x004FFBB8, 3, 0x00000000,
+	0x00597358, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Armageddon - v2.2 Buka
 	0x004F2863, 0x005F9609,
@@ -84,7 +95,8 @@ const struct AddressSpace {
 	0x00440045, 0x0043E186,
 	0x004E02F0, 0,
 	0x0042ED98, 0x0042EDBB, 0x0042F0DB, 0,
-	0x004C87E0,
+	0x004C87E0, 0x004FFEE8, 3, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes III Shadow - v3.1 Buka
 	0x004F7EB3, 0x00602379,
@@ -92,7 +104,8 @@ const struct AddressSpace {
 	0x00441DA4, 0x0043FEC2,
 	0x004E4A20, 0,
 	0x004300DE, 0x00430101, 0x00430410, 0,
-	0x004CCD40,
+	0x004CCD40, 0x00505B05, 0, 0x00000000,
+	0x0059EDB9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Complete - v4.0 Buka
 	0x004F7EB3, 0x006021A9,
@@ -100,7 +113,8 @@ const struct AddressSpace {
 	0x00441626, 0x0043F7B2,
 	0x004E4ED0, 0,
 	0x004301E6, 0x00430209, 0x00430519, 0,
-	0x004CCFE0,
+	0x004CCFE0, 0x00505B6E, 3, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -110,7 +124,8 @@ const struct AddressSpace {
 	0x0043E0F6, 0x0043FFB5,
 	0x004D9107, 0,
 	0x0042ED78, 0x0042ED9B, 0x0042F0BB, 0,
-	0x004C1150,
+	0x004C1150, 0x004F8188, 3, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles Beastmaster & Sword - v1.0
 	0x004EB494, 0x005AF2D9,
@@ -118,7 +133,8 @@ const struct AddressSpace {
 	0x0043FD05, 0x0043DE46,
 	0x004D8EC7, 0,
 	0x0042EE68, 0x0042EE8B, 0x0042F1AB, 0,
-	0x004C1410,
+	0x004C1410, 0x004F7AE8, 3, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
 // === ENG ======================================================================================================================================
@@ -129,7 +145,8 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0042E079, 0x0042E09C, 0x0042E39B, 0,
-	0x004AF690,
+	0x004AF690, 0x004DEE22, 2, 0x00000000,
+	0x00534EB8, 0x000050E0, 0x000051C4, 0x00013540,
 
 	// Heroes III Erathia - v1.1
 	0x0041E573, 0x004210B8,
@@ -137,7 +154,8 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0044DA49, 0x0044DA6C, 0x0044DD6B, 0,
-	0x004C11D0,
+	0x004C11D0, 0x004ED982, 2, 0x00000000,
+	0x0053D9F8, 0x000050E0, 0x000051C4, 0x000013540,
 
 	// Heroes III Erathia - v1.2
 	0x0041E523, 0x00421078,
@@ -145,7 +163,8 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0044D8E9, 0x0044D90C, 0x0044DC0B, 0,
-	0x004C1410,
+	0x004C1410, 0x004EDDA2, 2, 0x00000000,
+	0x0053DC98, 0x000053CC, 0x000054B0, 0x0001382C,
 
 	// Heroes III Erathia - v1.3
 	0x004F58F3, 0x005D9679,
@@ -153,7 +172,8 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x004E27A0, 0,
 	0x0042FE4E, 0x0042FE71, 0x00430180, 0,
-	0x004CAA90,
+	0x004CAA90, 0x00502C65, 0, 0x00000000,
+	0x0057C149, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Erathia - v1.4
 	0x004F5583, 0x005D8F69,
@@ -161,7 +181,8 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x004E25F0, 0,
 	0x0043017E, 0x004301A1, 0x004304B0, 0,
-	0x004CA6C0,
+	0x004CA6C0, 0x00502925, 0, 0x00000000,
+	0x0057B9C9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -171,7 +192,8 @@ const struct AddressSpace {
 	0x00440850, 0x0043E992,
 	0x004D91D0, 1,
 	0x0042F8F9, 0x0042F91C, 0x0042FC1B, 0,
-	0x004C3290,
+	0x004C3290, 0x004F88D6, 1, 0x00000000,
+	0x0058CEC8, 0x000053CC, 0x000054B0, 0x00013D70,
 
 	// Heroes III Armageddon - v2.1
 	0x004F5C43, 0x00600299,
@@ -179,7 +201,8 @@ const struct AddressSpace {
 	0x004416D4, 0x0043F7F2,
 	0x004E2D90, 0,
 	0x0043015E, 0x00430181, 0x00430490, 0,
-	0x004CAF80,
+	0x004CAF80, 0x00503875, 0, 0x00000000,
+	0x0059D029, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Armageddon - v2.2
 	0x004F5963, 0x005FFBF9,
@@ -187,7 +210,8 @@ const struct AddressSpace {
 	0x00441904, 0x0043FA22,
 	0x004E2940, 0,
 	0x0042FE6E, 0x0042FE91, 0x004301A0, 0,
-	0x004CB020,
+	0x004CB020, 0x005035D5, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -197,7 +221,8 @@ const struct AddressSpace {
 	0x00441A64, 0x0043FB82,
 	0x004E4930, 0,
 	0x004301CE, 0x004301F1, 0x00430500, 0,
-	0x004CCC30,
+	0x004CCC30, 0x00505995, 0, 0x00000000,
+	0x0059F589, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.1
 	0x004F85B3, 0x006027E9,
@@ -205,7 +230,8 @@ const struct AddressSpace {
 	0x004414A4, 0x0043F5C2,
 	0x004E5130, 0,
 	0x0043001E, 0x00430041, 0x00430350, 0,
-	0x00000000,
+	0x00000000, 0x00506205, 0, 0x00000000,
+	0x0059F5C9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.2
 	0x004F8193, 0x00602149,
@@ -213,7 +239,8 @@ const struct AddressSpace {
 	0x00441524, 0x0043F642,
 	0x004E4D40, 0,
 	0x0043020E, 0x00430231, 0x00430540, 0,
-	0x004CCC40,
+	0x004CCC40, 0x00505E15, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -223,7 +250,8 @@ const struct AddressSpace {
 	0x00441804, 0x0043F922,
 	0x004E4AD0, 0,
 	0x0043020E, 0x00430231, 0x00430540, 0,
-	0x004CCF80,
+	0x004CCF80, 0x005057C5, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ==============================================================================================================================================
 
@@ -233,7 +261,8 @@ const struct AddressSpace {
 	0x00441D34, 0x0043FE52,
 	0x004DCB70, 1,
 	0x0042FF0E, 0x0042FF31, 0x00430240, 0,
-	0x004C5160,
+	0x004C5160, 0x004FCCC5, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles Elements & Dragons - v1.0
 	0x004EFE04, 0x005B5469,
@@ -241,7 +270,8 @@ const struct AddressSpace {
 	0x00441744, 0x0043F862,
 	0x004DCB30, 1,
 	0x0042FFEE, 0x00430011, 0x00430320, 0,
-	0x004C4B90,
+	0x004C4B90, 0x004FCAA5, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles WorldTree - v1.0
 	0x004EFA84, 0x005B51B9,
@@ -249,7 +279,8 @@ const struct AddressSpace {
 	0x004418F4, 0x0043FA12,
 	0x004DC5E0, 1,
 	0x0042FEBE, 0x0042FEE1, 0x004301F0, 0,
-	0x004C4AF0,
+	0x004C4AF0, 0x004FC785, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles FieryMoon - v1.0
 	0x004EF824, 0x005B5249,
@@ -257,7 +288,8 @@ const struct AddressSpace {
 	0x00441424, 0x0043F542,
 	0x004DC760, 1,
 	0x0042FEDE, 0x0042FF01, 0x00430210, 0,
-	0x004C4810,
+	0x004C4810, 0x004FC475, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles Beastmaster & Sword - v1.0
 	0x004EF874, 0x005B4C09,
@@ -265,7 +297,8 @@ const struct AddressSpace {
 	0x00441514, 0x0043F632,
 	0x004DC670, 1,
 	0x0042FF46, 0x0042FF69, 0x00430279, 0,
-	0x004C4520,
+	0x004C4520, 0x004FC49E, 3, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
 // === USA ======================================================================================================================================
@@ -276,7 +309,8 @@ const struct AddressSpace {
 	0x004419E4, 0x0043FB02,
 	0x004DC850, 1,
 	0x0043018E, 0x004301B1, 0x004304C0, 0,
-	0x004C4B40,
+	0x004C4B40, 0x004FC505, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
 // === GER ======================================================================================================================================
@@ -287,7 +321,8 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0042E5FB, 0x0042E61E, 0x0042E94D, 0,
-	0x004B1500,
+	0x004B1500, 0x004E0C83, 2, 0x00000000,
+	0x00537B99, 0x000053CC, 0x000054B0, 0x0001382C,
 
 	// ==============================================================================================================================================
 
@@ -297,7 +332,8 @@ const struct AddressSpace {
 	0x00441354, 0x0043F472,
 	0x004DC940, 1,
 	0x0042FE4E, 0x0042FE71, 0x00430180, 0,
-	0x004C43C0,
+	0x004C43C0, 0x004FC635, 0, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
 // === FRA ======================================================================================================================================
@@ -308,7 +344,8 @@ const struct AddressSpace {
 	0x00441914, 0x0043FA32,
 	0x004E3050, 0,
 	0x0042FF5E, 0x0042FF81, 0x00430290, 0,
-	0x004CB170,
+	0x004CB170, 0x00503DF5, 0, 0x00000000,
+	0x0059D0E9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.1
 	0x004F8163, 0x006028F9,
@@ -316,7 +353,8 @@ const struct AddressSpace {
 	0x00441CF4, 0x0043FE12,
 	0x004E4A20, 0,
 	0x0043022E, 0x00430251, 0x00430560, 0,
-	0x004CD040,
+	0x004CD040, 0x00505DB5, 0, 0x00000000,
+	0x0059F6D9, 0x000053CC, 0x000054B4, 0x00013D74,
 #pragma endregion
 
 // === POL ======================================================================================================================================
@@ -327,7 +365,8 @@ const struct AddressSpace {
 	0x004414A4, 0x0043F5C2,
 	0x004E2890, 0,
 	0x004301BE, 0x004301E1, 0x004304F0, 0,
-	0x004CA910,
+	0x004CA910, 0x00503355, 0, 0x00000000,
+	0x0059D0D9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.1
 	0x004F7AF3, 0x00600ED7,
@@ -335,7 +374,8 @@ const struct AddressSpace {
 	0x00441574, 0x0043F692,
 	0x004E44D0, 0,
 	0x00430026, 0x00430049, 0x00430359, 0,
-	0x004CCA10,
+	0x004CCA10, 0x0050361E, 3, 0x00000000,
+	0x0059EFF9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.2
 	0x004F78D3, 0x00602179,
@@ -343,7 +383,8 @@ const struct AddressSpace {
 	0x004414E4, 0x0043F602,
 	0x004E4480, 0,
 	0x00430136, 0x00430159, 0x00430469, 0,
-	0x004CC630,
+	0x004CC630, 0x0050578E, 3, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes III Shadow - v3.2 / Armageddon - v2.2
 	0x004F5993, 0x005FE337,
@@ -351,7 +392,8 @@ const struct AddressSpace {
 	0x00441764, 0x0043F883,
 	0x004E2B20, 0,
 	0x0042FF86, 0x0042FFA9, 0x004302B9, 0,
-	0x004CAB10
+	0x004CAB10, 0x0050557E, 3, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000
 #pragma endregion
 };
 #pragma pack()
@@ -416,8 +458,7 @@ DWORD __fastcall ai_water_walk_fly(H3Hero* hero, BOOL hasWingth, DWORD* res)
 
 VOID __declspec(naked) hook_ai_water_walk_fly_v0()
 {
-	__asm
-	{
+	__asm {
 		push eax
 		push ecx
 
@@ -473,6 +514,181 @@ VOID __declspec(naked) hook_ai_water_walk_fly_v1()
 }
 #pragma endregion
 
+#pragma region fix ghost hero(without army)
+DWORD __cdecl ghostHeroFix(H3Army* army, DWORD back, INT cell, H3Army* destArmy, INT destCell, BOOL isHero, BOOL destIsHero)
+{
+	if (isHero && army != destArmy)
+	{
+		INT creaturesCount = 0;
+		for (INT i = 0; i < 7; i++)
+			if (army->type[i] >= 0)
+				creaturesCount += army->count[i];
+
+		if (creaturesCount <= 1 && destArmy->type[destCell] < 0)
+			return NULL;
+	}
+
+	return hookSpace->ghost_hero + 5;
+}
+
+VOID __declspec(naked) hook_ghostHeroFix()
+{
+	__asm {
+		push ecx
+		call ghostHeroFix
+		pop ecx
+
+		test eax, eax
+		jnz lbl_cont
+		retn 0x14
+
+		lbl_cont:
+		push ebp
+		ebp, esp
+		push 0xFFFFFFFF
+		jmp eax
+	}
+}
+#pragma endregion
+
+#pragma region RefugeCamp fix for random maps(it gave only 1 Pikeman each week)
+VOID __declspec(naked) hook_fixRefugeCamp_v0()
+{
+	__asm {
+		test al, al
+		jz lbl_cont
+
+		mov [edi+0x22], dx
+
+		lbl_cont:
+		test al, al
+		retn
+	}
+}
+
+VOID __declspec(naked) hook_fixRefugeCamp_v1()
+{
+	__asm {
+		test al, al
+		jz lbl_cont
+
+		mov [ebx+0x22], dx
+
+		lbl_cont:
+		test al, al
+		retn
+	}
+}
+
+VOID __declspec(naked) hook_fixRefugeCamp_v2()
+{
+	__asm {
+		mov cx, [edi+0x38]
+
+		test al, al
+		jz lbl_cont
+
+		mov [ebx+0x22], cx
+
+		lbl_cont:
+		test al, al
+		retn
+	}
+}
+
+VOID __declspec(naked) hook_fixRefugeCamp_v3()
+{
+	__asm {
+		test al, al
+		jz lbl_cont
+
+		mov [edi+0x22], cx
+
+		lbl_cont:
+		test al, al
+		retn
+	}
+}
+
+VOID __declspec(naked) hook_fixRefugeCamp_v4()
+{
+	__asm {
+		mov cx, [edi+0x38]
+
+		test al, al
+		jz lbl_cont
+
+		mov [ebp+0x22], cx
+
+		lbl_cont:
+		test al, al
+		retn
+	}
+}
+
+VOID __declspec(naked) hook_fixRefugeCamp_v5()
+{
+	__asm {
+		test al, al
+		jz lbl_cont
+
+		mov [edi+0x22], cx
+
+		lbl_cont:
+		test al, al
+		retn
+	}
+}
+#pragma endregion
+
+#pragma region fix double cast during 1 round in battle
+DWORD __stdcall double_cast_offset(DWORD index)
+{
+	return hookSpace->double_cast.offset[index];
+}
+
+VOID __declspec(naked) hook_double_cast()
+{
+	__asm {
+		push eax
+		push 0
+		call double_cast_offset
+		pop edx
+
+		lea ecx, [esi + edx * 4]
+		mov ecx, [ecx + eax]
+		test ecx, ecx
+		jz lbl_null
+
+		push edx
+		push 1
+		call double_cast_offset
+		pop edx
+
+		lea ecx, [esi + edx * 4]
+		mov ecx, [ecx + eax]
+		test ecx, ecx
+		jz lbl_cont
+
+		push 2
+		call double_cast_offset
+
+		mov al, [esi + eax]
+		test al, al
+		jz lbl_null
+
+		lbl_cont:
+		xor ecx. ecx
+		inc ecx
+		retn
+
+		lbl_null:
+		xor ecx, ecx
+		retn
+	}
+}
+#pragma endregion
+
 VOID PatchSpace(HOOKER hooker)
 {
 	// Armorer fix
@@ -500,6 +716,37 @@ VOID PatchSpace(HOOKER hooker)
 		if (ReadDWord(hooker, hookSpace->tavern_rumors + 3, &arrList))
 			PatchDWord(hooker, hookSpace->tavern_rumors + 3, arrList - 4);
 	}
+
+	// RefugeCamp fix for random maps (it gave only 1 Pikeman each week)
+	if (hookSpace->refuge_camp.hook)
+	{
+		switch (hookSpace->refuge_camp.type)
+		{
+		case 1:
+			PatchCall(hooker, hookSpace->refuge_camp.hook, hook_fixRefugeCamp_v1, 1);
+			break;
+		case 2:
+			PatchCall(hooker, hookSpace->refuge_camp.hook, hook_fixRefugeCamp_v2, 5);
+			break;
+		case 3:
+			PatchCall(hooker, hookSpace->refuge_camp.hook, hook_fixRefugeCamp_v3, 1);
+			break;
+		case 4:
+			PatchCall(hooker, hookSpace->refuge_camp.hook, hook_fixRefugeCamp_v3, 5);
+			break;
+		default:
+			PatchCall(hooker, hookSpace->refuge_camp.hook, hook_fixRefugeCamp_v0, 1);
+			break;
+		}
+	}
+
+	// fix ghost hero (without army)
+	if (hookSpace->ghost_hero)
+		PatchHook(hooker, hookSpace->ghost_hero, hook_ghostHeroFix);
+
+	// fix double cast during 1 round in battle
+	if (hookSpace->double_cast.hook)
+		PatchCall(hooker, hookSpace->double_cast.hook, hook_double_cast, 2);
 }
 
 extern "C" VOID __stdcall PatchMain(HOOKER hooker)
