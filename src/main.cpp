@@ -77,7 +77,7 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x00000000, 0x00000000, 0x00000000, 1,
-	0x004B0570, 0x004E08F2, 4, 0x00000000,
+	0x004B0570, 0x004E08F2, 4, 0x00547F89,
 	0x00537746, 0x000050E0, 0x000051C4, 0x00013540,
 
 	// Heroes III Armageddon - v2.1 Buka
@@ -86,7 +86,7 @@ const struct AddressSpace {
 	0x00440545, 0x0043E686,
 	0x004DFE30, 0,
 	0x0042EDC8, 0x0042EDEB, 0x0042F10B, 0,
-	0x004C8550, 0x004FFBB8, 3, 0x00000000,
+	0x004C8550, 0x004FFBB8, 3, 0x005A7F0A,
 	0x00597358, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Armageddon - v2.2 Buka
@@ -95,7 +95,7 @@ const struct AddressSpace {
 	0x00440045, 0x0043E186,
 	0x004E02F0, 0,
 	0x0042ED98, 0x0042EDBB, 0x0042F0DB, 0,
-	0x004C87E0, 0x004FFEE8, 3, 0x00000000,
+	0x004C87E0, 0x004FFEE8, 3, 0x005A7F3A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes III Shadow - v3.1 Buka
@@ -104,7 +104,7 @@ const struct AddressSpace {
 	0x00441DA4, 0x0043FEC2,
 	0x004E4A20, 0,
 	0x004300DE, 0x00430101, 0x00430410, 0,
-	0x004CCD40, 0x00505B05, 0, 0x00000000,
+	0x004CCD40, 0x00505B05, 0, 0x005AF9CA,
 	0x0059EDB9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Complete - v4.0 Buka
@@ -113,7 +113,7 @@ const struct AddressSpace {
 	0x00441626, 0x0043F7B2,
 	0x004E4ED0, 0,
 	0x004301E6, 0x00430209, 0x00430519, 0,
-	0x004CCFE0, 0x00505B6E, 3, 0x00000000,
+	0x004CCFE0, 0x00505B6E, 3, 0x005AFA8A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -124,7 +124,7 @@ const struct AddressSpace {
 	0x0043E0F6, 0x0043FFB5,
 	0x004D9107, 0,
 	0x0042ED78, 0x0042ED9B, 0x0042F0BB, 0,
-	0x004C1150, 0x004F8188, 3, 0x00000000,
+	0x004C1150, 0x004F8188, 3, 0x005650FA,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles Beastmaster & Sword - v1.0
@@ -133,7 +133,7 @@ const struct AddressSpace {
 	0x0043FD05, 0x0043DE46,
 	0x004D8EC7, 0,
 	0x0042EE68, 0x0042EE8B, 0x0042F1AB, 0,
-	0x004C1410, 0x004F7AE8, 3, 0x00000000,
+	0x004C1410, 0x004F7AE8, 3, 0x005650EA,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
@@ -145,7 +145,7 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0042E079, 0x0042E09C, 0x0042E39B, 0,
-	0x004AF690, 0x004DEE22, 2, 0x00000000,
+	0x004AF690, 0x004DEE22, 2, 0x00544E55,
 	0x00534EB8, 0x000050E0, 0x000051C4, 0x00013540,
 
 	// Heroes III Erathia - v1.1
@@ -154,7 +154,7 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0044DA49, 0x0044DA6C, 0x0044DD6B, 0,
-	0x004C11D0, 0x004ED982, 2, 0x00000000,
+	0x004C11D0, 0x004ED982, 2, 0x0054D825,
 	0x0053D9F8, 0x000050E0, 0x000051C4, 0x000013540,
 
 	// Heroes III Erathia - v1.2
@@ -163,7 +163,7 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0044D8E9, 0x0044D90C, 0x0044DC0B, 0,
-	0x004C1410, 0x004EDDA2, 2, 0x00000000,
+	0x004C1410, 0x004EDDA2, 2, 0x0054DBF5,
 	0x0053DC98, 0x000053CC, 0x000054B0, 0x0001382C,
 
 	// Heroes III Erathia - v1.3
@@ -172,7 +172,7 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x004E27A0, 0,
 	0x0042FE4E, 0x0042FE71, 0x00430180, 0,
-	0x004CAA90, 0x00502C65, 0, 0x00000000,
+	0x004CAA90, 0x00502C65, 0, 0x0058CD4A,
 	0x0057C149, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Erathia - v1.4
@@ -181,7 +181,7 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x004E25F0, 0,
 	0x0043017E, 0x004301A1, 0x004304B0, 0,
-	0x004CA6C0, 0x00502925, 0, 0x00000000,
+	0x004CA6C0, 0x00502925, 0, 0x0058C5FA,
 	0x0057B9C9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -192,7 +192,7 @@ const struct AddressSpace {
 	0x00440850, 0x0043E992,
 	0x004D91D0, 1,
 	0x0042F8F9, 0x0042F91C, 0x0042FC1B, 0,
-	0x004C3290, 0x004F88D6, 1, 0x00000000,
+	0x004C3290, 0x004F88D6, 1, 0x0059D605,
 	0x0058CEC8, 0x000053CC, 0x000054B0, 0x00013D70,
 
 	// Heroes III Armageddon - v2.1
@@ -201,7 +201,7 @@ const struct AddressSpace {
 	0x004416D4, 0x0043F7F2,
 	0x004E2D90, 0,
 	0x0043015E, 0x00430181, 0x00430490, 0,
-	0x004CAF80, 0x00503875, 0, 0x00000000,
+	0x004CAF80, 0x00503875, 0, 0x005ADC7A,
 	0x0059D029, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Armageddon - v2.2
@@ -210,7 +210,7 @@ const struct AddressSpace {
 	0x00441904, 0x0043FA22,
 	0x004E2940, 0,
 	0x0042FE6E, 0x0042FE91, 0x004301A0, 0,
-	0x004CB020, 0x005035D5, 0, 0x00000000,
+	0x004CB020, 0x005035D5, 0, 0x005AD61A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -221,7 +221,7 @@ const struct AddressSpace {
 	0x00441A64, 0x0043FB82,
 	0x004E4930, 0,
 	0x004301CE, 0x004301F1, 0x00430500, 0,
-	0x004CCC30, 0x00505995, 0, 0x00000000,
+	0x004CCC30, 0x00505995, 0, 0x005B020A,
 	0x0059F589, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.1
@@ -230,7 +230,7 @@ const struct AddressSpace {
 	0x004414A4, 0x0043F5C2,
 	0x004E5130, 0,
 	0x0043001E, 0x00430041, 0x00430350, 0,
-	0x00000000, 0x00506205, 0, 0x00000000,
+	0x00000000, 0x00506205, 0, 0x005B01DA,
 	0x0059F5C9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.2
@@ -239,7 +239,7 @@ const struct AddressSpace {
 	0x00441524, 0x0043F642,
 	0x004E4D40, 0,
 	0x0043020E, 0x00430231, 0x00430540, 0,
-	0x004CCC40, 0x00505E15, 0, 0x00000000,
+	0x004CCC40, 0x00505E15, 0, 0x005AF90A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -250,7 +250,7 @@ const struct AddressSpace {
 	0x00441804, 0x0043F922,
 	0x004E4AD0, 0,
 	0x0043020E, 0x00430231, 0x00430540, 0,
-	0x004CCF80, 0x005057C5, 0, 0x00000000,
+	0x004CCF80, 0x005057C5, 0, 0x005AF57A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// ==============================================================================================================================================
@@ -261,7 +261,7 @@ const struct AddressSpace {
 	0x00441D34, 0x0043FE52,
 	0x004DCB70, 1,
 	0x0042FF0E, 0x0042FF31, 0x00430240, 0,
-	0x004C5160, 0x004FCCC5, 0, 0x00000000,
+	0x004C5160, 0x004FCCC5, 0, 0x00569F5A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles Elements & Dragons - v1.0
@@ -270,7 +270,7 @@ const struct AddressSpace {
 	0x00441744, 0x0043F862,
 	0x004DCB30, 1,
 	0x0042FFEE, 0x00430011, 0x00430320, 0,
-	0x004C4B90, 0x004FCAA5, 0, 0x00000000,
+	0x004C4B90, 0x004FCAA5, 0, 0x0056A21A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles WorldTree - v1.0
@@ -279,7 +279,7 @@ const struct AddressSpace {
 	0x004418F4, 0x0043FA12,
 	0x004DC5E0, 1,
 	0x0042FEBE, 0x0042FEE1, 0x004301F0, 0,
-	0x004C4AF0, 0x004FC785, 0, 0x00000000,
+	0x004C4AF0, 0x004FC785, 0, 0x00569F3A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles FieryMoon - v1.0
@@ -288,7 +288,7 @@ const struct AddressSpace {
 	0x00441424, 0x0043F542,
 	0x004DC760, 1,
 	0x0042FEDE, 0x0042FF01, 0x00430210, 0,
-	0x004C4810, 0x004FC475, 0, 0x00000000,
+	0x004C4810, 0x004FC475, 0, 0x0056A1EA,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes Chronicles Beastmaster & Sword - v1.0
@@ -297,7 +297,7 @@ const struct AddressSpace {
 	0x00441514, 0x0043F632,
 	0x004DC670, 1,
 	0x0042FF46, 0x0042FF69, 0x00430279, 0,
-	0x004C4520, 0x004FC49E, 3, 0x00000000,
+	0x004C4520, 0x004FC49E, 3, 0x00569BDA,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
@@ -309,7 +309,7 @@ const struct AddressSpace {
 	0x004419E4, 0x0043FB02,
 	0x004DC850, 1,
 	0x0043018E, 0x004301B1, 0x004304C0, 0,
-	0x004C4B40, 0x004FC505, 0, 0x00000000,
+	0x004C4B40, 0x004FC505, 0, 0x0056A16A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
@@ -321,7 +321,7 @@ const struct AddressSpace {
 	0x00000000, 0x00000000,
 	0x00000000, 0,
 	0x0042E5FB, 0x0042E61E, 0x0042E94D, 0,
-	0x004B1500, 0x004E0C83, 2, 0x00000000,
+	0x004B1500, 0x004E0C83, 2, 0x00547EFA,
 	0x00537B99, 0x000053CC, 0x000054B0, 0x0001382C,
 
 	// ==============================================================================================================================================
@@ -332,7 +332,7 @@ const struct AddressSpace {
 	0x00441354, 0x0043F472,
 	0x004DC940, 1,
 	0x0042FE4E, 0x0042FE71, 0x00430180, 0,
-	0x004C43C0, 0x004FC635, 0, 0x00000000,
+	0x004C43C0, 0x004FC635, 0, 0x0056A16A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 #pragma endregion
 
@@ -344,7 +344,7 @@ const struct AddressSpace {
 	0x00441914, 0x0043FA32,
 	0x004E3050, 0,
 	0x0042FF5E, 0x0042FF81, 0x00430290, 0,
-	0x004CB170, 0x00503DF5, 0, 0x00000000,
+	0x004CB170, 0x00503DF5, 0, 0x005ADD3A,
 	0x0059D0E9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.1
@@ -353,7 +353,7 @@ const struct AddressSpace {
 	0x00441CF4, 0x0043FE12,
 	0x004E4A20, 0,
 	0x0043022E, 0x00430251, 0x00430560, 0,
-	0x004CD040, 0x00505DB5, 0, 0x00000000,
+	0x004CD040, 0x00505DB5, 0, 0x005B02EA,
 	0x0059F6D9, 0x000053CC, 0x000054B4, 0x00013D74,
 #pragma endregion
 
@@ -365,7 +365,7 @@ const struct AddressSpace {
 	0x004414A4, 0x0043F5C2,
 	0x004E2890, 0,
 	0x004301BE, 0x004301E1, 0x004304F0, 0,
-	0x004CA910, 0x00503355, 0, 0x00000000,
+	0x004CA910, 0x00503355, 0, 0x005ADCFA,
 	0x0059D0D9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.1
@@ -374,7 +374,7 @@ const struct AddressSpace {
 	0x00441574, 0x0043F692,
 	0x004E44D0, 0,
 	0x00430026, 0x00430049, 0x00430359, 0,
-	0x004CCA10, 0x0050361E, 3, 0x00000000,
+	0x004CCA10, 0x0050361E, 3, 0x005AFD1A,
 	0x0059EFF9, 0x000053CC, 0x000054B4, 0x00013D74,
 
 	// Heroes III Shadow - v3.2
@@ -383,7 +383,7 @@ const struct AddressSpace {
 	0x004414E4, 0x0043F602,
 	0x004E4480, 0,
 	0x00430136, 0x00430159, 0x00430469, 0,
-	0x004CC630, 0x0050578E, 3, 0x00000000,
+	0x004CC630, 0x0050578E, 3, 0x005AF9BA,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 
 	// Heroes III Shadow - v3.2 / Armageddon - v2.2
@@ -392,7 +392,7 @@ const struct AddressSpace {
 	0x00441764, 0x0043F883,
 	0x004E2B20, 0,
 	0x0042FF86, 0x0042FFA9, 0x004302B9, 0,
-	0x004CAB10, 0x0050557E, 3, 0x00000000,
+	0x004CAB10, 0x0050557E, 3, 0x005AD13A,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000
 #pragma endregion
 };
@@ -515,39 +515,22 @@ VOID __declspec(naked) hook_ai_water_walk_fly_v1()
 #pragma endregion
 
 #pragma region fix ghost hero(without army)
-DWORD __cdecl ghostHeroFix(H3Army* army, DWORD back, INT cell, H3Army* destArmy, INT destCell, BOOL isHero, BOOL destIsHero)
+DWORD back_ghostHero;
+VOID __fastcall ghostHeroFix(H3Army* army, DWORD none, INT cell, H3Army* destArmy, INT destCell, BOOL isHero, BOOL destIsHero)
 {
 	if (isHero && army != destArmy)
 	{
 		INT creaturesCount = 0;
-		for (INT i = 0; i < 7; i++)
+		for (DWORD i = 0; i < 7; i++)
 			if (army->type[i] >= 0)
 				creaturesCount += army->count[i];
 
 		if (creaturesCount <= 1 && destArmy->type[destCell] < 0)
-			return NULL;
+			return;
 	}
-
-	return hookSpace->ghost_hero + 5;
-}
-
-VOID __declspec(naked) hook_ghostHeroFix()
-{
-	__asm {
-		push ecx
-		call ghostHeroFix
-		pop ecx
-
-		test eax, eax
-		jnz lbl_cont
-		retn 0x14
-
-		lbl_cont:
-		push ebp
-		ebp, esp
-		push 0xFFFFFFFF
-		jmp eax
-	}
+	
+	((VOID(__thiscall*)(H3Army*, INT, H3Army*, INT, BOOL, BOOL))back_ghostHero)(army, cell, destArmy, destCell, isHero, destIsHero);
+	return;
 }
 #pragma endregion
 
@@ -678,7 +661,7 @@ VOID __declspec(naked) hook_double_cast()
 		jz lbl_null
 
 		lbl_cont:
-		xor ecx. ecx
+		xor ecx, ecx
 		inc ecx
 		retn
 
@@ -741,8 +724,11 @@ VOID PatchSpace(HOOKER hooker)
 	}
 
 	// fix ghost hero (without army)
-	if (hookSpace->ghost_hero)
-		PatchHook(hooker, hookSpace->ghost_hero, hook_ghostHeroFix);
+	if (hookSpace->ghost_hero && ReadDWord(hooker, hookSpace->ghost_hero + 1, &back_ghostHero))
+	{
+		back_ghostHero += hookSpace->ghost_hero + 5 + GetBaseOffset(hooker);
+		PatchCall(hooker, hookSpace->ghost_hero, ghostHeroFix);
+	}
 
 	// fix double cast during 1 round in battle
 	if (hookSpace->double_cast.hook)
